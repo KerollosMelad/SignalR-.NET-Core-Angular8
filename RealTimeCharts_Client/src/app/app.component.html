@@ -1,0 +1,16 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="display: block" *ngIf='signalRService.data'>
+  <canvas baseChart
+          [datasets]="signalRService.data"
+          [labels]="chartLabels"
+          [options]="chartOptions"
+          [legend]="chartLegend"
+          [chartType]="chartType"
+          [colors]="colors"></canvas>
+</div>
+
+
+<input type="text"  [(ngModel)]="signalRService.sendData">
+<input type="button" (click)= "sendDataToServer($event)" value="send">
+
+<router-outlet></router-outlet>
